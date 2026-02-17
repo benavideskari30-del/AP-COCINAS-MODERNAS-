@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AP Cocinas Modernas - Diseño, fabricación e instalación de cocinas modernas, closets, puertas y mobiliario personalizado de lujo en Villavicencio, Colombia.">
+    <meta name="keywords" content="cocinas modernas, closets, puertas, centros de TV, mobiliario, Villavicencio, Colombia, diseño de interiores, remodelación">
+    <meta name="author" content="AP Cocinas Modernas">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="AP Cocinas Modernas | Transformamos espacios con estilo y elegancia">
+    <meta property="og:description" content="Diseño, fabricación e instalación de cocinas modernas y mobiliario personalizado de alta calidad.">
+    <meta property="og:type" content="website">
+    <title>AP Cocinas Modernas | Transformamos espacios con estilo y elegancia</title>
+    <link rel="stylesheet" href="CSS/STYLE.CSS">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- HEADER FIJO -->
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#inicio" class="logo">
+                    <span class="logo-text">AP Cocinas Modernas</span>
+                </a>
+                
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                    
+                    <li class="dropdown">
+                        <a href="#" class="nav-link" onclick="toggleDropdown(event, 'nosotrosDropdown')">Nosotros <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content" id="nosotrosDropdown">
+                            <a href="#" onclick="showNosotrosContent('quienes')">¿Quiénes Somos?</a>
+                            <a href="#" onclick="showNosotrosContent('mision')">Nuestra Misión</a>
+                            <a href="#" onclick="showNosotrosContent('vision')">Nuestra Visión</a>
+                        </div>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="#" class="nav-link" onclick="toggleDropdown(event, 'serviciosDropdown')">Servicios <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content" id="serviciosDropdown">
+                            <a href="#" onclick="openModal('cita')">Agenda una Cita</a>
+                            <a href="#" onclick="openModal('garantia')">Requiero una Garantía</a>
+                        </div>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="#" class="nav-link" onclick="toggleDropdown(event, 'catalogoDropdown')">Catálogo <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content" id="catalogoDropdown">
+                            <a href="#categorias" onclick="scrollToSection('categorias')">Closets</a>
+                            <a href="#categorias" onclick="scrollToSection('categorias')">Cocinas</a>
+                            <a href="#categorias" onclick="scrollToSection('categorias')">Puertas</a>
+                            <a href="#categorias" onclick="scrollToSection('categorias')">Centros de TV</a>
+                            <a href="#mesones" onclick="scrollToSection('mesones')">Mesones</a>
+                            <a href="#madera" onclick="scrollToSection('madera')">Tonos</a>
+                        </div>
+                    </li>
+                    
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <a href="https://www.facebook.com/share/1DWC9GJLq6/" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/apcocinasmodernas?igsh=cXl2NHRheXg1OHlu" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/573125707993" target="_blank" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#cotizacion" class="btn btn-gold">Cotizar</a>
+                </div>
+                
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MODAL NOSOTROS -->
+    <div class="modal" id="nosotrosModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('nosotrosModal')">&times;</span>
+            <div id="nosotrosContent"></div>
+        </div>
+    </div>
+
+    <!-- MODAL SERVICIOS -->
+    <div class="modal" id="servicioModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('servicioModal')">&times;</span>
+            <div id="servicioContent"></div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN HERO -->
+    <section class="hero" id="inicio">
+        <div class="hero-bg">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">Transformamos espacios con estilo y elegancia</h1>
+            <p class="hero-subtitle">Cocinas, closets, puertas, centros de TV, muebles a medida y muebles de baño</p>
+            <div class="hero-buttons">
+                <a href="#categorias" class="btn btn-outline">Ver Catálogo</a>
+                <a href="#cotizacion" class="btn btn-gold">Solicita tu Cotización</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CATÁLOGO DE MESONES -->
+    <section class="mesones" id="mesones">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Catálogo de Mesones</h2>
+                <p class="section-subtitle">Manejamos mesones en piedra sinterizada, cuarzo y granito</p>
+            </div>
+            
+            <div class="mesones-grid">
+                <div class="meson-card" onclick="showMesonDetail('sinterizada')">
+                    <div class="meson-image sinterizada"></div>
+                    <div class="meson-info">
+                        <h3>Piedra Sinterizada</h3>
+                        <button class="btn btn-outline-small">Ver Colores</button>
+                    </div>
+                </div>
+                
+                <div class="meson-card" onclick="showMesonDetail('cuarzo')">
+                    <div class="meson-image cuarzo"></div>
+                    <div class="meson-info">
+                        <h3>Cuarzo</h3>
+                        <button class="btn btn-outline-small">Ver Colores</button>
+                    </div>
+                </div>
+                
+                <div class="meson-card" onclick="showMesonDetail('granito')">
+                    <div class="meson-image granito"></div>
+                    <div class="meson-info">
+                        <h3>Granito</h3>
+                        <button class="btn btn-outline-small">Ver Colores</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DETALLE MESONES MODAL -->
+    <div class="modal full-modal" id="mesonModal">
+        <div class="modal-content large">
+            <span class="close-modal" onclick="closeModal('mesonModal')">&times;</span>
+            <div id="mesonContent"></div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN CATEGORÍAS -->
+    <section class="categorias" id="categorias">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Selecciona la Categoría que te Interesa</h2>
+            </div>
+            
+            <div class="categorias-grid">
+                <div class="categoria-card" onclick="showCategoria('cocinas')">
+                    <div class="categoria-image cocinas-bg"></div>
+                    <div class="categoria-overlay">
+                        <h3>Cocinas</h3>
+                        <div class="categoria-buttons">
+                            <button class="btn btn-transparent">Ver Categoría</button>
+                            <button class="btn btn-gold-small">Solicita tu Diseño</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="categoria-card" onclick="showCategoria('closets')">
+                    <div class="categoria-image closets-bg"></div>
+                    <div class="categoria-overlay">
+                        <h3>Closets</h3>
+                        <div class="categoria-buttons">
+                            <button class="btn btn-transparent">Ver Categoría</button>
+                            <button class="btn btn-gold-small">Solicita tu Diseño</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="categoria-card" onclick="showCategoria('centros-tv')">
+                    <div class="categoria-image centros-bg"></div>
+                    <div class="categoria-overlay">
+                        <h3>Centros de TV</h3>
+                        <div class="categoria-buttons">
+                            <button class="btn btn-transparent">Ver Categoría</button>
+                            <button class="btn btn-gold-small">Solicita tu Diseño</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="categoria-card" onclick="showCategoria('puertas')">
+                    <div class="categoria-image puertas-bg"></div>
+                    <div class="categoria-overlay">
+                        <h3>Puertas</h3>
+                        <div class="categoria-buttons">
+                            <button class="btn btn-transparent">Ver Categoría</button>
+                            <button class="btn btn-gold-small">Solicita tu Diseño</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL CATEGORÍA CON SIMULADOR -->
+    <div class="modal full-modal" id="categoriaModal">
+        <div class="modal-content xlarge">
+            <span class="close-modal" onclick="closeModal('categoriaModal')">&times;</span>
+            <div class="categoria-detail" id="categoriaContent">
+                <!-- Contenido dinámico -->
+            </div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN INFO MADERA RH -->
+    <section class="info-madera">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-text">
+                    <h3>Tipo de Categoría</h3>
+                    <p>La madera RH (Resistente a la Humedad) se refiere a tableros de partículas (MDP) o fibras (MDF) tratados con resinas especiales y alta presión para soportar ambientes húmedos. Identificados comúnmente por un núcleo verde o un sello, estos materiales reducen la absorción de agua y el hinchamiento, siendo ideales para baños y cocinas, aunque no son sumergibles.</p>
+                    <a href="#cotizacion" class="btn btn-gold">Cotiza tu Remodelación Aquí</a>
+                </div>
+                <div class="info-image">
+                    <div class="apartamento-bg"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CATÁLOGO DE MADERA -->
+    <section class="madera" id="madera">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Catálogo de Madera</h2>
+                <p class="section-subtitle">Descubre nuestra selección de maderas en tonos claros, oscuros y sólidos para cada estilo de cocina</p>
+            </div>
+            
+            <div class="madera-blocks">
+                <div class="madera-block" onclick="showMaderaDetail('claros')">
+                    <div class="madera-header">
+                        <h3>Tonos Claros</h3>
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    <div class="madera-samples claros-samples"></div>
+                </div>
+                
+                <div class="madera-block" onclick="showMaderaDetail('oscuros')">
+                    <div class="madera-header">
+                        <h3>Tonos Oscuros</h3>
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    <div class="madera-samples oscuros-samples"></div>
+                </div>
+                
+                <div class="madera-block" onclick="showMaderaDetail('solidos')">
+                    <div class="madera-header">
+                        <h3>Acabados Sólidos</h3>
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    <div class="madera-samples solidos-samples"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL MADERA -->
+    <div class="modal" id="maderaModal">
+        <div class="modal-content large">
+            <span class="close-modal" onclick="closeModal('maderaModal')">&times;</span>
+            <div id="maderaContent"></div>
+        </div>
+    </div>
+
+  <!-- SECCIÓN COTIZACIÓN -->
+<section class="cotizacion" id="cotizacion">
+    <div class="container">
+        <div class="section-header light">
+            <h2 class="section-title">Solicita tu Cotización</h2>
+            <p class="section-subtitle">Completa el formulario y nos pondremos en contacto contigo</p>
+        </div>
+        
+        <form class="cotizacion-form" id="cotizacionForm" onsubmit="handleFormSubmit(event)">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="nombre">Nombre completo *</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="telefono">Teléfono *</label>
+                    <input type="tel" id="telefono" name="telefono" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="ubicacion">Ubicación *</label>
+                    <input type="text" id="ubicacion" name="ubicacion" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Correo electrónico *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="servicio">Tipo de servicio *</label>
+                    <select id="servicio" name="servicio" required>
+                        <option value="">Selecciona una opción</option>
+                        <option value="garantia">Solicitud de Garantía</option>
+                        <option value="cita">Agendar Cita</option>
+                        <option value="remodelacion">Remodelación de cocina</option>
+                        <option value="carpinteria">Carpintería Completa</option>
+                        <option value="cocina-nueva">Cocina desde 0</option>
+                    </select>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="archivos">Adjuntar archivos (PDF, imágenes o Word)</label>
+                    <input type="file" id="archivos" name="archivos" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx" multiple>
+                    <small class="file-hint">Máximo 5MB por archivo</small>
+                </div>
+                
+                <!-- ❌ ELIMINADO: reCAPTCHA widget -->
+                
+            </div>
+            
+            <button type="submit" class="btn btn-gold btn-large">Enviar Cotización</button>
+        </form>
+    </div>
+</section>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="contacto">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3 class="footer-logo">AP Cocinas Modernas</h3>
+                    <p class="footer-tagline">Transformando espacios con estilo y elegancia</p>
+                </div>
+                
+                <div class="footer-info">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Cl. 35 #22a-14 LC Brr Santander, Meta, Villavicencio, Colombia</p>
+                    <p><i class="fas fa-phone"></i> +57 312 570 7993</p>
+                    <p><i class="fas fa-envelope"></i> cocinas.modernas.ap@gmail.com</p>
+                    <p><i class="fas fa-clock"></i> Lun - Vie: 8:00 AM - 6:00 PM</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#mesones">Mesones</a></li>
+                        <li><a href="#categorias">Catálogo</a></li>
+                        <li><a href="#madera">Maderas</a></li>
+                        <li><a href="#cotizacion">Cotización</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-social">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="https://wa.me/573125707993" target="_blank" class="social-btn whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://www.instagram.com/apcocinasmodernas?igsh=cXl2NHRheXg1OHlu" target="_blank" class="social-btn instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/share/1DWC9GJLq6/" target="_blank" class="social-btn facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                    <a href="#" class="admin-link">Acceso Administrativo</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 AP Cocinas Modernas. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CHATBOT -->
+    <div class="chatbot-container" id="chatbot">
+        <div class="chatbot-toggle" onclick="toggleChatbot()">
+            <i class="fas fa-comments"></i>
+        </div>
+        
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <h4>Asistente AP Cocinas</h4>
+                <button class="chatbot-close" onclick="toggleChatbot()"><i class="fas fa-times"></i></button>
+            </div>
+            
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot">
+                    <p>¡Hola! Bienvenido a AP Cocinas Modernas. ¿En qué puedo ayudarte hoy?</p>
+                </div>
+            </div>
+            
+            <div class="chatbot-options">
+                <button class="chat-option" onclick="handleChatOption('contacto')">Contactarme con un asesor</button>
+                <button class="chat-option" onclick="handleChatOption('materiales')">¿Qué materiales manejan?</button>
+                <button class="chat-option" onclick="handleChatOption('cita')">Quiero agendar cita</button>
+                <button class="chat-option" onclick="handleChatOption('ubicacion')">¿Dónde están ubicados?</button>
+            </div>
+            
+            <div class="chatbot-form" id="chatbotForm" style="display: none;">
+                <input type="text" id="chatNombre" placeholder="Nombre">
+                <input type="tel" id="chatTelefono" placeholder="Teléfono">
+                <input type="email" id="chatEmail" placeholder="Correo">
+                <button onclick="sendChatData()">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- NOTIFICACIÓN -->
+    <div class="notification" id="notification"></div>
+
+    <script src="JS/SCRIPT.JS"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</body>
+</html>
